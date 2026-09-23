@@ -7,6 +7,8 @@ prática. Material da instituição, anotações de aula e atividades avaliadas 
 
 ## Organização
 
+Regras do repositório (o que entra, nomes, commits): [`CONVENCOES.md`](CONVENCOES.md).
+
 ```
 disciplinas/
 ├── _comum/
