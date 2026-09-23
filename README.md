@@ -17,6 +17,21 @@ disciplinas/
     └── pratica/           ← exercícios próprios
 ```
 
+## Depois de clonar
+
+```sh
+git config core.hooksPath .githooks
+```
+
+O git não ativa hooks versionados sozinho. Sem esse comando, o pre-commit abaixo não roda.
+
+**Proteções contra publicar material privado**, da mais forte para a mais fraca:
+1. **`.gitignore` em lista branca:** só entra o que está em `pre/`, `pratica/` e `_comum/`, além dos READMEs.
+   Vale em qualquer clone, sem instalar nada.
+2. **`.githooks/pre-commit`:** recusa PDF, Office e as pastas `fontes/`, `avaliacoes/`, `anotacoes/`,
+   `turma/` e `ingresso/`, mesmo com `git add -f`. Precisa do comando acima e pode ser pulado
+   com `--no-verify`.
+
 ## Pré-estudos
 
 - [Bootstrap 4.5.2 → 5.3.8](disciplinas/periodo-1/a-desenvolvimento-frontend/pre/bootstrap-4.5.2-para-5.3.8.md): o que mudou entre a versão usada no material e a atual

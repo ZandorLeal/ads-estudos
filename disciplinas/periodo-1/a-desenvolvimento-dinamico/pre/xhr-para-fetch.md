@@ -21,7 +21,7 @@ surgindo ao longo do tempo. O XHR **não foi deprecado** e continua funcionando;
 | `async/await` (ES2017) | 2017 | escrever código com Promise como se fosse sequencial |
 | `fetch` global no Node | **v18.0.0** sem flag · **estável desde v21.0.0** | antes precisava de `node-fetch` ou `axios` |
 
-Sua máquina tem Node v22.14.0, então `fetch` já roda direto (ver `../../../_comum/ambiente.md`).
+Qualquer Node 18+ roda `fetch` direto. Aqui é o Node 22 (ver [`ambiente.md`](../../../_comum/ambiente.md)).
 
 ## O mesmo código, três jeitos
 
