@@ -1,0 +1,19 @@
+# Repo PÚBLICO — lista branca: só entra o que está liberado abaixo.
+# Material da instituição, anotações de aula e atividades avaliadas NUNCA entram aqui.
+*
+!*/
+!README.md
+!.gitignore
+!.githooks/
+!.githooks/*
+!disciplinas/_comum/**
+!disciplinas/periodo-*/*/pre/**
+!disciplinas/periodo-*/*/pratica/**
+
+# mesmo dentro das pastas liberadas
+*.pdf
+*.docx
+*.pptx
+node_modules/
+__pycache__/
+.env

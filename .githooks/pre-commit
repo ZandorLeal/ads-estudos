@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Trava do repo público: recusa commit com material que deve ficar no repo privado.
+bloqueado=$(git diff --cached --name-only --diff-filter=ACMR | grep -iE '\.(pdf|docx|pptx)$|(^|/)(fontes|avaliacoes|anotacoes|turma|ingresso)/')
+if [ -n "$bloqueado" ]; then
+  echo "pre-commit: estes arquivos não podem ir para o repo PÚBLICO:" >&2
+  echo "$bloqueado" | sed 's/^/  - /' >&2
+  exit 1
+fi
+grandes=$(git diff --cached --name-only --diff-filter=ACMR | while read -r f; do [ -f "$f" ] && [ "$(stat -c%s "$f")" -gt 5242880 ] && echo "$f"; done)
+if [ -n "$grandes" ]; then
+  echo "pre-commit: arquivo acima de 5 MB (confira se é mesmo público):" >&2
+  echo "$grandes" | sed 's/^/  - /' >&2
+  exit 1
+fi
